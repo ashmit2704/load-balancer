@@ -67,10 +67,14 @@ git clone <your-github-repo-url>
 cd infollion_load_balancer
 
 2. Install Dependencies
+```
 npm install
+```
 
-3. Start the Server
+4. Start the Server
+```
 npm start
+```
 
 
 You should see:
