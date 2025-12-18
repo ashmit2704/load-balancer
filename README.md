@@ -83,54 +83,41 @@ Load Balancer demo running on http://localhost:3000
 
 Available Endpoints
 Route a Single Request
+```
 GET /route?ip=1.2.3.4
-
+```
 
 If ip is not provided, a random IP is generated.
 
 Simulate Traffic
 
 Simulates multiple incoming requests with random IPs.
-
+```
 POST /simulate
-
-
-Body:
-
-{
-  "count": 10
-}
+```
 
 List Nodes
+```
 GET /nodes
-
+```
 Add a Node
+```
 POST /nodes
-
-
-Body:
-
-{
-  "name": "Node-D",
-  "weight": 2
-}
+```
 
 Remove a Node
+```
 DELETE /nodes/Node-D
-
+```
 Update Node Health
+```
 POST /nodes/Node-B/health
-
-
-Body:
-
-{
-  "healthy": false
-}
+```
 
 Metrics
+```
 GET /metrics
-
+```
 
 Returns:
 
@@ -143,17 +130,18 @@ Node health and weights
 Rate limit configuration
 
 Logs
+```
 GET /logs
-
+```
 
 Returns recent routing logs.
 
 Dashboard
 
 Open in browser:
-
+```
 http://localhost:3000/dashboard
-
+```
 
 Shows:
 
@@ -170,18 +158,21 @@ In PowerShell, curl is an alias for Invoke-WebRequest.
 To use real curl, always use curl.exe.
 
 Simulate Requests (PowerShell)
+```
 curl.exe -X POST http://localhost:3000/simulate `
   -H "Content-Type: application/json" `
   -d '{ "count": 10 }'
-
+```
 
 OR (recommended):
-
+```
 Invoke-RestMethod `
   -Uri http://localhost:3000/simulate `
   -Method POST `
   -ContentType "application/json" `
   -Body '{ "count": 10 }'
-
+```
 Check Metrics
+```
 curl.exe http://localhost:3000/metrics
+```
